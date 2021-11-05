@@ -71,10 +71,23 @@ html {
   overflow-x: hidden;
 }
 
+#simple-bar {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
 body {
   margin: 0;
   font-family: "asd", sans-serif;
   overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  width: 0px;
+  /* ширина для вертикального скролла */
+  height: 0px;
+  /* высота для горизонтального скролла */
+  background-color: #143861;
 }
 
 ul {
@@ -126,6 +139,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .site-container {
   background: #00001E;
+}
+
+.asd {
+  width: 606px;
+  height: 620px;
+  background: url("src/img/svg/header/header__gradient-first.svg") no-repeat;
+  background-size: cover;
 }
 
 .header {
@@ -419,7 +439,7 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   z-index: 100;
   display: none;
-  transition: all 1s ease;
+  transition: right 1s ease;
 }
 @media (max-width: 992px) {
   .header .menu__btn {
@@ -491,7 +511,6 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 106;
   opacity: 0;
   display: none;
-  transition: 0.5s;
 }
 @media (max-width: 480px) {
   .header .menu__btn-mob {
@@ -572,7 +591,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: transparent;
 }
 .header .header__top--active {
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease;
   transform: translateX(0%);
 }
 .header .banner {
@@ -698,7 +717,7 @@ h1, h2, h3, h4, h5, h6 {
 .header .banner__logo {
   margin-bottom: 25px;
   transform: translateX(-120%);
-  transition: all 0.8s ease 0s;
+  transition: transform 0.8s ease 0s, opacity 0.8s ease 0s;
   opacity: 0;
 }
 @media (max-width: 1380px) {
@@ -739,17 +758,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 .header .banner__title {
   transform: translateX(-120%);
-  transition: all 0.8s ease 0s;
+  transition: opacity 0.8s ease 0s;
   opacity: 0;
 }
 .header .banner__title._active {
   transform: translateX(0);
-  transition: all 0.8s ease 0.3s;
+  transition: opacity 0.8s ease 0.3s;
   opacity: 1;
 }
 .header .banner__link {
   transform: translateX(-150%);
-  transition: all 0.8s ease 0.4s;
+  transition: opacity 0.8s ease 0.4s;
   opacity: 0;
 }
 .header .banner__link._active {
@@ -917,7 +936,6 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   top: 0;
   opacity: 0;
-  transition: all 1s ease-in;
 }
 .header .banner__svg-top .mob-icons__item:nth-child(1) {
   -webkit-animation: spinHorizontal-mob-1 normal forwards ease-in-out;
@@ -2039,12 +2057,12 @@ h1, h2, h3, h4, h5, h6 {
   background-size: 100% 100%;
   position: relative;
   transform: translateX(-120%);
-  transition: all 0.8s ease 0s;
+  transition: transform 0.8s, opacity 0.8s ease 0s;
   opacity: 0;
 }
 .about__desc._active {
   transform: translateY(0%);
-  transition: all 0.8s ease 0s;
+  transition: transform 0.8s, opacity 0.8s ease 0s;
   opacity: 1;
 }
 @media (max-width: 1280px) {
@@ -2291,7 +2309,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 32px;
   left: -28px;
   transform: translateY(100%);
-  transition: all 0.8s ease 0s;
+  transition: transform 0.8s, opacity 0.8s ease 0s;
   opacity: 0;
 }
 @media (max-width: 480px) {
@@ -2303,7 +2321,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 146px;
   left: -38px;
   transform: translateX(-120%);
-  transition: all 0.8s ease 0s;
+  transition: transform 0.8s, opacity 0.8s ease 0s;
   opacity: 0;
 }
 @media (max-width: 480px) {
@@ -2315,7 +2333,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 93px;
   left: 205px;
   transform: translateY(120%);
-  transition: all 0.8s ease 0s;
+  transition: transform 0.8s, opacity 0.8s ease 0s;
   opacity: 0;
 }
 @media (max-width: 480px) {
@@ -2327,7 +2345,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 115px;
   left: 226px;
   transform: translateY(50%);
-  transition: all 0.8s ease 0s;
+  transition: transform 0.8s, opacity 0.8s ease 0s;
   opacity: 0;
 }
 @media (max-width: 480px) {
@@ -2339,7 +2357,7 @@ h1, h2, h3, h4, h5, h6 {
   top: -7px;
   left: 236px;
   transform: translateX(120%);
-  transition: all 0.8s ease 0s;
+  transition: transform 0.8s, opacity 0.8s ease 0s;
   opacity: 0;
 }
 @media (max-width: 480px) {
@@ -2349,27 +2367,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 .about__connecting .about-animate._active .about-animate__item:nth-child(1) {
   transform: translateY(0%);
-  transition: all 0.8s ease 0s;
+  transition: transform 0.8s, opacity 0.8s ease 0s;
   opacity: 1;
 }
 .about__connecting .about-animate._active .about-animate__item:nth-child(2) {
   transform: translateX(0%);
-  transition: all 0.8s ease 0.3s;
+  transition: transform 0.8s, opacity 0.8s ease 0.3s;
   opacity: 1;
 }
 .about__connecting .about-animate._active .about-animate__item:nth-child(3) {
   transform: translateY(0%);
-  transition: all 0.8s ease 0.5s;
+  transition: transform 0.8s, opacity 0.8s ease 0.5s;
   opacity: 1;
 }
 .about__connecting .about-animate._active .about-animate__item:nth-child(4) {
   transform: translateY(0%);
-  transition: all 0.8s ease 0.6s;
+  transition: transform 0.8s, opacity 0.8s ease 0.6s;
   opacity: 1;
 }
 .about__connecting .about-animate._active .about-animate__item:nth-child(5) {
   transform: translateX(0%);
-  transition: all 0.8s ease 0.6s;
+  transition: transform 0.8s, opacity 0.8s ease 0.6s;
   opacity: 1;
 }
 .about__text {
@@ -2581,17 +2599,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 .connect-nft__left, .connect-nft__right {
   position: absolute;
-  transition: 1s ease-in;
+  transition: opacity 1s ease-in, transform 1s ease-in;
 }
 .connect-nft__left {
   left: -20px;
   transform: translateX(-120%);
-  transition: all 0.8s ease 0s;
+  transition: opacity 0.8s ease 0s, transform 0.8s ease 0s;
   opacity: 0;
 }
 .connect-nft__left._active {
   transform: translateX(0%);
-  transition: all 0.8s ease 0s;
   opacity: 1;
 }
 @media (max-width: 1280px) {
@@ -2610,7 +2627,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 @media (max-width: 480px) {
-  .connect-nft__left img {
+  .connect-nft__left svg {
     height: 125px;
   }
 }
@@ -2618,12 +2635,12 @@ h1, h2, h3, h4, h5, h6 {
   right: -20px;
   top: 60px;
   transform: translateX(120%);
-  transition: all 0.8s ease 0s;
+  transition: opacity 0.8s ease 0s, transform 0.8s ease 0s;
   opacity: 0;
 }
 .connect-nft__right._active {
   transform: translateX(0%);
-  transition: all 0.8s ease 0s;
+  transition: opacity 0.8s ease 0s, transform 0.8s ease 0s;
   opacity: 1;
 }
 @media (max-width: 1280px) {
@@ -2652,7 +2669,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 @media (max-width: 480px) {
-  .connect-nft__right img {
+  .connect-nft__right svg {
     height: 125px;
   }
 }
@@ -3139,10 +3156,10 @@ h1, h2, h3, h4, h5, h6 {
   .app-mob__item {
     display: flex;
     min-width: 0;
-    min-width: 348px !important;
     width: 100%;
     height: 136px;
     background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 .app-mob__item:before {
@@ -3173,7 +3190,6 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .app-mob__item:nth-child(1) {
     background-image: url(./../img/app-mob-1.png);
-    min-width: 267px !important;
   }
   .app-mob__item:nth-child(1) .app-mob__icon {
     padding-left: 53px;
@@ -3386,7 +3402,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .roadmap__line-nov {
   position: absolute;
-  transition: all 0.5s ease;
+  transition: opacity 0.5s ease;
 }
 .roadmap__line-nov:last-child {
   opacity: 0;
@@ -3397,7 +3413,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .roadmap__line-oct {
   position: absolute;
-  transition: all 0.5s ease;
+  transition: opacity 0.5s ease;
 }
 .roadmap__line-oct:last-child {
   opacity: 0;
@@ -3409,7 +3425,7 @@ h1, h2, h3, h4, h5, h6 {
 .roadmap__line-ter {
   position: absolute;
   left: 0;
-  transition: all 0.5s ease;
+  transition: opacity 0.5s ease;
 }
 .roadmap__line-ter:last-child {
   opacity: 0;
@@ -4455,7 +4471,7 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
   }
 }
-.address__left-svg svg {
+.address__left-svg img {
   height: 500px;
 }
 .address__title {
@@ -4573,7 +4589,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   opacity: 0;
   transform: translate(0%, 60%);
-  transition: all 0.4s ease-in;
+  transition: translate 0.4s ease-in, opacity 0.4s ease-in;
 }
 @media (max-width: 992px) {
   .address__popup {
